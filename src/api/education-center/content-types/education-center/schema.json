@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "education_centers",
+  "info": {
+    "singularName": "education-center",
+    "pluralName": "education-centers",
+    "displayName": "Education Center",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "text",
+      "required": true,
+      "unique": true
+    },
+    "email": {
+      "type": "email"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "location": {
+      "type": "string"
+    },
+    "education_types": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::education-type.education-type"
+    }
+  }
+}
